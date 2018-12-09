@@ -64,9 +64,11 @@ public class Handler {
 
     public void doStaff(double timeIncoming){
 
+        queueLength += requestArrayList.size();
+        numOfIter++;
         for(int i = 0; i < 4; i++){
 
-            queueLength += requestsListinThread.get(i).size();
+
 
             if(currentTime + timeIncoming >= threadArrayList.get(i).getTime() && threadArrayList.get(i).getTime() >= currentTime
                     && !threadArrayList.get(i).isFree()){
@@ -84,7 +86,7 @@ public class Handler {
                 }
             }
         }
-        numOfIter++;
+
     }
 
     public void doRemaining(){
@@ -115,8 +117,8 @@ public class Handler {
     }
 
 
-    public int getQueueLength() {
-        return numOfIter / queueLength;
+    public double getQueueLength() {
+        return (double)numOfIter / queueLength;
     }
 
     public void setQueueLength(int queueLength) {
