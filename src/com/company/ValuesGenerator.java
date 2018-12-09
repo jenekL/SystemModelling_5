@@ -26,6 +26,4 @@ public class ValuesGenerator {
     public double getExpY(){ //postup
         return (-1) * MX_EXP * Math.log(getKsi());
     }
-
-
 }

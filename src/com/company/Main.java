@@ -7,7 +7,7 @@ public class Main {
         Handler handler = new Handler();
         ValuesGenerator valuesGenerator = new ValuesGenerator();
 
-        int num = 10;
+        int num = 20;
 
         for(int i = 0; i < num; i++) {
             handler.addRequests(new Request("заявка " + i, valuesGenerator.getUniformY()));
@@ -15,7 +15,7 @@ public class Main {
 
         handler.doRemaining();
 
-        System.out.println("\nСреднее время ожидания: " + handler.getTimeOjidaniya()/num + "\nСреднее время простоя " + handler.getTimeProstoya()/4);
+        System.out.println("\nСреднее время ожидания: " + handler.getTimeOjidaniya()/num + "\nСредняя длина очереди " + handler.getQueueLength());
 
 //        new Threadd();
 ////        for(int i = 0; i < 10; i++) {
